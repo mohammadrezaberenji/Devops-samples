@@ -297,3 +297,24 @@ Port: 5432
 
 
 ## Question : Why using LVM ? 
+
+With LVM
+
+LVM adds a layer of abstraction.
+
+Physical Disk
+      │
+      ▼
+Physical Volume (PV)
+      │
+      ▼
+Volume Group (VG)
+      │
+      ├───────────────┐
+      ▼               ▼
+Logical Volume     Logical Volume
+      │               │
+      ▼               ▼
+Filesystem       Filesystem
+
+Instead of partitions owning fixed sizes, all storage goes into a pool (the Volume Group), and Logical Volumes are created from that pool.
