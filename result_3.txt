@@ -1,0 +1,6 @@
+101, John Doe, Software Engineer, $120000, Active
+102, Jane Smith, Data Scientist, $135000, Active
+103, Bob Johnson, DevOps Engineer, $115000, Inactive
+104, Alice Williams, Product Manager, $130000, Current
+# NOTE: Update next week
+105, Charlie Brown, QA Engineer, $95000, Active
