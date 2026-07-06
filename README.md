@@ -6,4 +6,7 @@ I would create a separate branch for every task, and by switching the branches, 
 The first challenge that I've solved was about adding a resizable partition using LVM , migrate postgresql data directory to the this new partion and installing Zabbix server and dashboard.
 The branche name is : feature_add_partion_lvm_postgressql_zabbix.
 
+The second challenge was practicing string manipulation with sed. I added the challenges to the branch with name : 
+sed_command_practice
+
 I would like to see your comments and your opinion about my soloutions. I would be glad to see your soloutions , concerns and other possible ways to solve the challenge.
