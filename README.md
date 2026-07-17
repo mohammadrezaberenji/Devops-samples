@@ -1,12 +1,32 @@
-# Devops-samples
- This repository includes some useful devops challenges. 
-Since I've started to learn DevOps, I've decided to share my practical assignments and homework on how to be a DevOps engineer with real scenarios. 
-I would create a separate branch for every task, and by switching the branches, you can see the details about the scenario and how I solved.
 
-The first challenge that I've solved was about adding a resizable partition using LVM , migrate postgresql data directory to the this new partion and installing Zabbix server and dashboard.
-The branche name is : feature_add_partion_lvm_postgressql_zabbix.
+# Manual OCI Container Setup with `runc`
 
-The second challenge was practicing string manipulation with sed. I added the challenges to the branch with name : 
-sed_command_practice
+This project documents how I manually created and ran a container with **`runc`**. The purpose was to understand what higher-level tools such as Docker normally do for us: prepare a root filesystem, create an OCI runtime specification, and start the container process.
 
-I would like to see your comments and your opinion about my soloutions. I would be glad to see your soloutions , concerns and other possible ways to solve the challenge.
+> `runc` is a low-level OCI runtime for Linux. Do this in a Linux machine, VM, or WSL2 environment—not directly on macOS or Windows.
+
+## What I learned
+
+An `runc` container needs an **OCI bundle**:
+
+```text
+my-runc-container/
+├── config.json     # OCI runtime configuration
+└── rootfs/          # Filesystem visible inside the container
+    ├── bin/
+    ├── etc/
+    ├── proc/
+    └── ...
+```
+
+The most important idea is that `runc` starts a process **inside `rootfs`**. Therefore, the command configured in `config.json` must exist inside that filesystem.
+
+## Prerequisites
+
+- Linux, WSL2, or a Linux virtual machine.
+- `runc` installed.
+- Docker installed, used only to export a small root filesystem for this lab.
+- `jq` installed, used to edit JSON safely.
+- Kernel user namespaces enabled if using the rootless method below.
+
+
